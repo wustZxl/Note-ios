@@ -9,12 +9,7 @@
 #import "NoteHomeTabBar.h"
 #import "UICommon.h"
 
-#define CENTER_BUTTON_WIDTH         60
-#define CENTER_BUTTON_HEIGHT        60
-
 @interface NoteHomeTabBar ()
-
-@property (nonatomic, strong) UIButton *centerButton;
 
 @end
 
@@ -26,7 +21,8 @@
         _centerButton.frame = CGRectMake(SCREEN_WIDTH - CENTER_BUTTON_WIDTH/2, self.bounds.origin.y - CENTER_BUTTON_HEIGHT/2, CENTER_BUTTON_WIDTH, CENTER_BUTTON_HEIGHT);
         [_centerButton setImage:[UIImage imageNamed:@"toolbar_note"] forState:UIControlStateNormal];
         [_centerButton addTarget:self action:@selector(centerButtonEvent:) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:_centerButton];
+        [self bringSubviewToFront:_centerButton];
+        [self addSubview:_centerButton]; 
     }
     return _centerButton;
 }

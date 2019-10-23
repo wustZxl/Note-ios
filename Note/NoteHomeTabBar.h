@@ -10,5 +10,7 @@
 
 @interface NoteHomeTabBar : UITabBar
 
+@property (nonatomic, strong) UIButton *centerButton;
+
 @end
 
