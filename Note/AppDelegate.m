@@ -20,10 +20,10 @@
     // Override point for customization after application launch.
     
 //    ViewController *vc = [[ViewController alloc] init];
-    ViewController *vc = [[ViewController alloc]init];
+    self.tabBarController = [[ViewController alloc]init];
 
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    [self.window setRootViewController:vc];
+    [self.window setRootViewController:self.tabBarController];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     

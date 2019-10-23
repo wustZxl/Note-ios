@@ -15,14 +15,21 @@
 
 @implementation NoteHomeTabBar
 
+- (instancetype)init {
+    if (self = [super init]) {
+        [self addSubview:self.centerButton];
+    }
+    return self;
+}
+
 - (UIButton *)centerButton{
     if (!_centerButton) {
         _centerButton = [[UIButton alloc]init];
-        _centerButton.frame = CGRectMake(SCREEN_WIDTH - CENTER_BUTTON_WIDTH/2, self.bounds.origin.y - CENTER_BUTTON_HEIGHT/2, CENTER_BUTTON_WIDTH, CENTER_BUTTON_HEIGHT);
+        _centerButton.frame = CGRectMake((SCREEN_WIDTH - CENTER_BUTTON_WIDTH)/2, self.bounds.origin.y - CENTER_BUTTON_HEIGHT/2, CENTER_BUTTON_WIDTH, CENTER_BUTTON_HEIGHT);
         [_centerButton setImage:[UIImage imageNamed:@"tabbar_home"] forState:UIControlStateNormal];
         [_centerButton addTarget:self action:@selector(centerButtonEvent:) forControlEvents:UIControlEventTouchUpInside];
         [self bringSubviewToFront:_centerButton];
-        [self addSubview:_centerButton]; 
+         
     }
     return _centerButton;
 }
@@ -33,14 +40,15 @@
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Hi" message:@"You pressed center button just now!" preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction *alertAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        self.centerButton.tintColor = [UIColor redColor];
+        [alertController dismissViewControllerAnimated:YES completion:nil];
     }];
     
     [alertController addAction:alertAction];
     
     id delegate = [UIApplication sharedApplication].delegate;
-    UITabBarController *tabBarController = [delegate tabBarController];
-    [tabBarController.selectedViewController presentViewController:alertController animated:NO completion:nil];
+    UITabBarController *vc = [delegate tabBarController];
+    
+    [vc.selectedViewController presentViewController:alertController animated:YES completion:nil];
     
     NSLog(@"click center button...");
 }
