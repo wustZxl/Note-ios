@@ -21,6 +21,7 @@
 
 #import <Masonry/Masonry.h>
 #import "UICommon.h"
+#import "UICommonColor.h"
 
 @interface ViewController ()
 
@@ -38,7 +39,7 @@
     if (self = [super init]) {
         // 利用KVO来使用自定义的tabBar
         [self setValue:[[NoteHomeTabBar alloc] init] forKey:@"tabBar"];
-        
+        self.tabBar.tintColor = HomeTabBarTintColor;
         [self addAllChildViewController];
     }
 

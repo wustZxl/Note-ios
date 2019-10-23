@@ -68,6 +68,7 @@
 		228EDEB423601DFC000CC2F1 /* NoteHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteHomeViewController.m; sourceTree = "<group>"; };
 		228EDEB6236040F4000CC2F1 /* NoteListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoteListViewController.h; sourceTree = "<group>"; };
 		228EDEB7236040F4000CC2F1 /* NoteListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteListViewController.m; sourceTree = "<group>"; };
+		228EDEDF23607CD4000CC2F1 /* UICommonColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UICommonColor.h; sourceTree = "<group>"; };
 		22CAEC56235D518900B4E1C9 /* NoteHomeTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoteHomeTabBar.h; sourceTree = "<group>"; };
 		22CAEC57235D518900B4E1C9 /* NoteHomeTabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteHomeTabBar.m; sourceTree = "<group>"; };
 		22CAEC59235D51CE00B4E1C9 /* UICommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UICommon.h; sourceTree = "<group>"; };
@@ -135,6 +136,7 @@
 		228387BA235D508200F2A4ED /* Note */ = {
 			isa = PBXGroup;
 			children = (
+				228EDEE023607E23000CC2F1 /* CommonFile */,
 				228387BB235D508200F2A4ED /* AppDelegate.h */,
 				228387BC235D508200F2A4ED /* AppDelegate.m */,
 				228387C1235D508200F2A4ED /* ViewController.h */,
@@ -151,7 +153,6 @@
 				228EDEAE235EEF28000CC2F1 /* DoneListViewController.m */,
 				228EDEAA235EEEC3000CC2F1 /* MeViewController.h */,
 				228EDEAB235EEEC3000CC2F1 /* MeViewController.m */,
-				22CAEC59235D51CE00B4E1C9 /* UICommon.h */,
 				228387C4235D508200F2A4ED /* Main.storyboard */,
 				228387C7235D508300F2A4ED /* Assets.xcassets */,
 				228387C9235D508300F2A4ED /* LaunchScreen.storyboard */,
@@ -177,6 +178,15 @@
 				228387E4235D508300F2A4ED /* Info.plist */,
 			);
 			path = NoteUITests;
+			sourceTree = "<group>";
+		};
+		228EDEE023607E23000CC2F1 /* CommonFile */ = {
+			isa = PBXGroup;
+			children = (
+				22CAEC59235D51CE00B4E1C9 /* UICommon.h */,
+				228EDEDF23607CD4000CC2F1 /* UICommonColor.h */,
+			);
+			path = CommonFile;
 			sourceTree = "<group>";
 		};
 		409149ED1E035F6879F01EE0 /* Pods */ = {
