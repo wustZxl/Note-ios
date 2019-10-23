@@ -10,8 +10,10 @@
 #define UICommon_h
 
 #pragma mark - ================= NoteHomeTabBar ==================
-#define CENTER_BUTTON_WIDTH                 30
-#define CENTER_BUTTON_HEIGHT                30
+#define TABBAR_IMAGE_WIDTH                 30
+#define TABBAR_IMAGE_HEIGHT                30
+#define CENTER_BUTTON_WIDTH                60
+#define CENTER_BUTTON_HEIGHT               60
 
 #define SCREEN_WIDTH                        [UIScreen mainScreen].bounds.size.width
 #define SCREEN_HEIGHT                       [UIScreen mainScreen].bounds.size.height

@@ -19,7 +19,7 @@
     if (!_centerButton) {
         _centerButton = [[UIButton alloc]init];
         _centerButton.frame = CGRectMake(SCREEN_WIDTH - CENTER_BUTTON_WIDTH/2, self.bounds.origin.y - CENTER_BUTTON_HEIGHT/2, CENTER_BUTTON_WIDTH, CENTER_BUTTON_HEIGHT);
-        [_centerButton setImage:[UIImage imageNamed:@"toolbar_note"] forState:UIControlStateNormal];
+        [_centerButton setImage:[UIImage imageNamed:@"tabbar_home"] forState:UIControlStateNormal];
         [_centerButton addTarget:self action:@selector(centerButtonEvent:) forControlEvents:UIControlEventTouchUpInside];
         [self bringSubviewToFront:_centerButton];
         [self addSubview:_centerButton]; 

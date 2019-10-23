@@ -61,30 +61,30 @@
 - (void)addAllChildViewController {
     NoteListViewController *noteListVC = [[NoteListViewController alloc]init];
     noteListVC.view.backgroundColor = [UIColor orangeColor];
-    [self addChildViewController:noteListVC withTitle:@"noteList" andImageName:@"tabbar_note" atIndex:0];
+    [self addChildViewController:noteListVC withTitle:@"noteList" andImageName:@"tabbar_note"];
     
     TodoListViewController *todoListVC = [[TodoListViewController alloc]init];
     todoListVC.view.backgroundColor = [UIColor lightGrayColor];
-    [self addChildViewController:todoListVC withTitle:@"todoList" andImageName:@"tabbar_done" atIndex:1];
+    [self addChildViewController:todoListVC withTitle:@"todoList" andImageName:@"tabbar_todo"];
     
     NoteHomeViewController *homeVC = [[NoteHomeViewController alloc]init];
     homeVC.view.backgroundColor = [UIColor yellowColor];
-    [self addChildViewController:homeVC withTitle:@"home" andImageName:@"" atIndex:2];
+    [self addChildViewController:homeVC withTitle:@"home" andImageName:@""];
     
     DoneListViewController *doneListVC = [[DoneListViewController alloc]init];
     doneListVC.view.backgroundColor = [UIColor greenColor];
-    [self addChildViewController:doneListVC withTitle:@"doneList" andImageName:@"tabbar_done" atIndex:3];
+    [self addChildViewController:doneListVC withTitle:@"doneList" andImageName:@"tabbar_done"];
     
     MeViewController *meVC = [[MeViewController alloc]init];
     meVC.view.backgroundColor = [UIColor systemPinkColor];
-    [self addChildViewController:meVC withTitle:@"me" andImageName:@"tabbar_note" atIndex:4];
+    [self addChildViewController:meVC withTitle:@"me" andImageName:@"tabbar_me"];
 }
 
-- (void)addChildViewController:(UIViewController *)childController withTitle:(NSString *)title andImageName:(NSString *)imageName atIndex:(NSInteger)index{
+- (void)addChildViewController:(UIViewController *)childController withTitle:(NSString *)title andImageName:(NSString *)imageName {
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:childController];
     childController.navigationItem.title = title;
     nav.tabBarItem.title = title;
-    UIImage *image = [self reSizeImage:[UIImage imageNamed:imageName] toSize:CGSizeMake(CENTER_BUTTON_WIDTH, CENTER_BUTTON_HEIGHT)];
+    UIImage *image = [self reSizeImage:[UIImage imageNamed:imageName] toSize:CGSizeMake(TABBAR_IMAGE_WIDTH, TABBAR_IMAGE_HEIGHT)];
     nav.tabBarItem.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     
     [self addChildViewController:nav];
