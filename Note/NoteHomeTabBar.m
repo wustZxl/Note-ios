@@ -34,6 +34,17 @@
 #pragma mark - ================= selector ==================
 
 - (void)centerButtonEvent: (id)sender {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Hi" message:@"You pressed center button just now!" preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *alertAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        self.centerButton.tintColor = [UIColor redColor];
+    }];
+    
+    [alertController addAction:alertAction];
+    
+    id delegate = [UIApplication sharedApplication].delegate;
+    UITabBarController *tabBarController = [delegate tabBarController];
+    [tabBarController.selectedViewController presentViewController:alertController animated:NO completion:nil];
     
     NSLog(@"click center button...");
 }

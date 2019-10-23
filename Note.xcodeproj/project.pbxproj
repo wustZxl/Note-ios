@@ -19,6 +19,7 @@
 		228EDEAC235EEEC3000CC2F1 /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 228EDEAB235EEEC3000CC2F1 /* MeViewController.m */; };
 		228EDEAF235EEF28000CC2F1 /* DoneListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 228EDEAE235EEF28000CC2F1 /* DoneListViewController.m */; };
 		228EDEB523601DFC000CC2F1 /* NoteHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 228EDEB423601DFC000CC2F1 /* NoteHomeViewController.m */; };
+		228EDEB8236040F5000CC2F1 /* NoteListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 228EDEB7236040F4000CC2F1 /* NoteListViewController.m */; };
 		22CAEC58235D518900B4E1C9 /* NoteHomeTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CAEC57235D518900B4E1C9 /* NoteHomeTabBar.m */; };
 		5BF3B1D597A256403D052957 /* libPods-Note.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F249900D38E721B8A7B76FDF /* libPods-Note.a */; };
 /* End PBXBuildFile section */
@@ -65,6 +66,8 @@
 		228EDEAE235EEF28000CC2F1 /* DoneListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DoneListViewController.m; sourceTree = "<group>"; };
 		228EDEB323601DFC000CC2F1 /* NoteHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoteHomeViewController.h; sourceTree = "<group>"; };
 		228EDEB423601DFC000CC2F1 /* NoteHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteHomeViewController.m; sourceTree = "<group>"; };
+		228EDEB6236040F4000CC2F1 /* NoteListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoteListViewController.h; sourceTree = "<group>"; };
+		228EDEB7236040F4000CC2F1 /* NoteListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteListViewController.m; sourceTree = "<group>"; };
 		22CAEC56235D518900B4E1C9 /* NoteHomeTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoteHomeTabBar.h; sourceTree = "<group>"; };
 		22CAEC57235D518900B4E1C9 /* NoteHomeTabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteHomeTabBar.m; sourceTree = "<group>"; };
 		22CAEC59235D51CE00B4E1C9 /* UICommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UICommon.h; sourceTree = "<group>"; };
@@ -140,6 +143,8 @@
 				22CAEC57235D518900B4E1C9 /* NoteHomeTabBar.m */,
 				228EDEB323601DFC000CC2F1 /* NoteHomeViewController.h */,
 				228EDEB423601DFC000CC2F1 /* NoteHomeViewController.m */,
+				228EDEB6236040F4000CC2F1 /* NoteListViewController.h */,
+				228EDEB7236040F4000CC2F1 /* NoteListViewController.m */,
 				228EDEA7235EECDF000CC2F1 /* TodoListViewController.h */,
 				228EDEA8235EECDF000CC2F1 /* TodoListViewController.m */,
 				228EDEAD235EEF28000CC2F1 /* DoneListViewController.h */,
@@ -342,6 +347,7 @@
 				228387C3235D508200F2A4ED /* ViewController.m in Sources */,
 				228EDEB523601DFC000CC2F1 /* NoteHomeViewController.m in Sources */,
 				228EDEAC235EEEC3000CC2F1 /* MeViewController.m in Sources */,
+				228EDEB8236040F5000CC2F1 /* NoteListViewController.m in Sources */,
 				228EDEA9235EECDF000CC2F1 /* TodoListViewController.m in Sources */,
 				228EDEAF235EEF28000CC2F1 /* DoneListViewController.m in Sources */,
 				228387BD235D508200F2A4ED /* AppDelegate.m in Sources */,

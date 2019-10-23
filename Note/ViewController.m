@@ -12,7 +12,9 @@
 #define MAS_SHORTHAND_GLOBALS
 
 #import "ViewController.h"
+#import "NoteHomeTabBar.h"
 #import "NoteHomeViewController.h"
+#import "NoteListViewController.h"
 #import "TodoListViewController.h"
 #import "DoneListViewController.h"
 #import "MeViewController.h"
@@ -34,21 +36,10 @@
 
 - (instancetype)init {
     if (self = [super init]) {
-        self.view.backgroundColor = [UIColor whiteColor];
-        UIView *iconBackgroundView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 25, 25)];
-        UIButton *iconButton = [[UIButton alloc]init];
-        iconButton.frame = iconBackgroundView.frame;
-//        iconButton. = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"settings"]];
-        [iconButton setImage:[UIImage imageNamed:@"icon_settings"] forState:UIControlStateNormal];
-        [iconButton addTarget:self action:@selector(iconButtonClick:) forControlEvents:UIControlEventTouchUpInside];
-        [iconBackgroundView addSubview:iconButton];
-
-        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:iconBackgroundView];
-
-        self.navigationItem.title = @"Note List";
-        self.navigationController.navigationBar.barTintColor = [UIColor yellowColor];
-
-        [self.view addSubview:self.tabBar];
+        // 利用KVO来使用自定义的tabBar
+        [self setValue:[[NoteHomeTabBar alloc] init] forKey:@"tabBar"];
+        
+        [self addAllChildViewController];
     }
 
     return self;
@@ -65,6 +56,37 @@
 
 - (void)viewDidLayoutSubviews {
     
+}
+
+- (void)addAllChildViewController {
+    NoteListViewController *noteListVC = [[NoteListViewController alloc]init];
+    noteListVC.view.backgroundColor = [UIColor orangeColor];
+    [self addChildViewController:noteListVC withTitle:@"noteList" andImageName:@"tabbar_note"];
+    
+    TodoListViewController *todoListVC = [[TodoListViewController alloc]init];
+    todoListVC.view.backgroundColor = [UIColor lightGrayColor];
+    [self addChildViewController:todoListVC withTitle:@"todoList" andImageName:@"tabbar_done"];
+    
+    NoteHomeViewController *homeVC = [[NoteHomeViewController alloc]init];
+    homeVC.view.backgroundColor = [UIColor yellowColor];
+    [self addChildViewController:homeVC withTitle:@"home" andImageName:@"icon_setting"];
+    
+    DoneListViewController *doneListVC = [[DoneListViewController alloc]init];
+    doneListVC.view.backgroundColor = [UIColor greenColor];
+    [self addChildViewController:doneListVC withTitle:@"doneList" andImageName:@"tabbar_done"];
+    
+    MeViewController *meVC = [[MeViewController alloc]init];
+    meVC.view.backgroundColor = [UIColor systemPinkColor];
+    [self addChildViewController:meVC withTitle:@"me" andImageName:@"tabbar_note"];
+}
+
+- (void)addChildViewController:(UIViewController *)childController withTitle:(NSString *)title andImageName:(NSString *)imageName {
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:childController];
+    childController.navigationItem.title = title;
+    nav.tabBarItem.title = title;
+    nav.tabBarItem.image = [UIImage imageNamed:imageName];
+    
+    [self addChildViewController:nav];
 }
 
 #pragma mark - ================= selector ==================
