@@ -24,6 +24,7 @@
 		228EDF1123619BCA000CC2F1 /* NoteInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 228EDF1023619BCA000CC2F1 /* NoteInfoModel.m */; };
 		228EDF1423619FA3000CC2F1 /* NoteInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 228EDF1323619FA3000CC2F1 /* NoteInfo.json */; };
 		228EDF1A2362C70D000CC2F1 /* UIColor+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 228EDF192362C70D000CC2F1 /* UIColor+Addition.m */; };
+		228EDF1F2362D3BB000CC2F1 /* NoteEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 228EDF1E2362D3BB000CC2F1 /* NoteEditViewController.m */; };
 		22CAEC58235D518900B4E1C9 /* NoteHomeTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CAEC57235D518900B4E1C9 /* NoteHomeTabBar.m */; };
 		5BF3B1D597A256403D052957 /* libPods-Note.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F249900D38E721B8A7B76FDF /* libPods-Note.a */; };
 /* End PBXBuildFile section */
@@ -80,6 +81,8 @@
 		228EDF1323619FA3000CC2F1 /* NoteInfo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = NoteInfo.json; sourceTree = "<group>"; };
 		228EDF182362C70D000CC2F1 /* UIColor+Addition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Addition.h"; sourceTree = "<group>"; };
 		228EDF192362C70D000CC2F1 /* UIColor+Addition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Addition.m"; sourceTree = "<group>"; };
+		228EDF1D2362D3BB000CC2F1 /* NoteEditViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoteEditViewController.h; sourceTree = "<group>"; };
+		228EDF1E2362D3BB000CC2F1 /* NoteEditViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteEditViewController.m; sourceTree = "<group>"; };
 		22CAEC56235D518900B4E1C9 /* NoteHomeTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoteHomeTabBar.h; sourceTree = "<group>"; };
 		22CAEC57235D518900B4E1C9 /* NoteHomeTabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteHomeTabBar.m; sourceTree = "<group>"; };
 		22CAEC59235D51CE00B4E1C9 /* UICommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UICommon.h; sourceTree = "<group>"; };
@@ -147,6 +150,7 @@
 		228387BA235D508200F2A4ED /* Note */ = {
 			isa = PBXGroup;
 			children = (
+				228EDF1B2362D33B000CC2F1 /* NoteEdit */,
 				228EDF1223619F77000CC2F1 /* Resource */,
 				228EDF0B23619264000CC2F1 /* Cell */,
 				228EDF0A236191E4000CC2F1 /* Model */,
@@ -229,6 +233,15 @@
 				228EDF1323619FA3000CC2F1 /* NoteInfo.json */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		228EDF1B2362D33B000CC2F1 /* NoteEdit */ = {
+			isa = PBXGroup;
+			children = (
+				228EDF1D2362D3BB000CC2F1 /* NoteEditViewController.h */,
+				228EDF1E2362D3BB000CC2F1 /* NoteEditViewController.m */,
+			);
+			path = NoteEdit;
 			sourceTree = "<group>";
 		};
 		409149ED1E035F6879F01EE0 /* Pods */ = {
@@ -398,6 +411,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				228387C3235D508200F2A4ED /* ViewController.m in Sources */,
+				228EDF1F2362D3BB000CC2F1 /* NoteEditViewController.m in Sources */,
 				228EDEB523601DFC000CC2F1 /* NoteHomeViewController.m in Sources */,
 				228EDEAC235EEEC3000CC2F1 /* MeViewController.m in Sources */,
 				228EDF1123619BCA000CC2F1 /* NoteInfoModel.m in Sources */,

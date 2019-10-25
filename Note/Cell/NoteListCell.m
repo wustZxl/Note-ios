@@ -62,7 +62,7 @@
 - (UIView *)leftSlideView {
     if (!_leftSlideView) {
         _leftSlideView = [[UIView alloc]init];
-        _leftSlideView.backgroundColor = pink02;
+        _leftSlideView.backgroundColor = ColorNoteListCellBackground;
     }
     return _leftSlideView;
 }
@@ -81,7 +81,6 @@
         make.top.mas_equalTo(self.containerView).offset(10);
         make.height.mas_equalTo(20);
     }];
-
     self.noteTitleLabel.text = self.noteTitle;
     self.noteTitleLabel.font = [UIFont systemFontOfSize:16.0f];
             
@@ -91,11 +90,16 @@
         make.top.mas_equalTo(self.noteTitleLabel.mas_bottom).offset(10);
         make.bottom.mas_equalTo(self.containerView.mas_bottom).offset(-10);
     }];
-    
-
     self.noteDateLabel.text = self.noteDate;
     self.noteDateLabel.font = [UIFont systemFontOfSize:12.0f];
-
+    
+    [self.leftSlideView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.mas_equalTo(self).offset(-60);
+//        make.right.mas_equalTo(self).offset(-10);
+//        make.top.mas_equalTo(self).offset(10);
+//        make.bottom.mas_equalTo(self).offset(-10);
+        make.width.mas_equalTo(100);
+    }];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

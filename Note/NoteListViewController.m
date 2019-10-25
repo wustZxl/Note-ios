@@ -72,9 +72,18 @@
     NoteInfoModel *noteInfo = self.datasource[indexPath.row];
     cell.noteTitle = noteInfo.noteTitle;
     cell.noteDate = noteInfo.noteDate;
-    
+    UIView *view = [[UIView alloc]init];
+    UILabel *label = [[UILabel alloc]init];
+    label.text = @"delete";
+    view.backgroundColor = ColorNoteListCellBackground;
+    cell.editingAccessoryView = label;
     return cell;
 }
+
+//- (UISwipeActionsConfiguration *)tableView:(UITableView *)tableView leadingSwipeActionsConfigurationForRowAtIndexPath:(NSIndexPath *)indexPath {
+//
+//}
+//UIContextualAction
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.datasource.count;
@@ -82,6 +91,10 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 70.0f;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
 }
 
 /*
