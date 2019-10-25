@@ -18,4 +18,6 @@
 #define pink06                  [UIColor colorWithRed:86/255.0f green:46/255.0f blue:55/255.0f alpha:1.0]
 #define pink07                  [UIColor colorWithRed:114/255.0f green:99/255.0f blue:110/255.0f alpha:1.0]
 
+#pragma mark - ================= note list cell ==================
+#define ColorNoteListCellBackground  [UIColor colorWithHex:0xD8E6E7]
 #endif /* UICommonColor_h */

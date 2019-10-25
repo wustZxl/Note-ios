@@ -10,6 +10,8 @@
 #import "NoteListCell.h"
 #import "NoteInfoModel.h"
 #import "UICommon.h"
+#import "UICommonColor.h"
+#import "UIColor+Addition.h"
 
 @interface NoteListViewController ()
 
@@ -58,6 +60,7 @@
 - (UITableView *)tableView {
     if (!_tableView) {
         _tableView = [[UITableView alloc]initWithFrame:self.view.frame];
+        _tableView.backgroundColor = ColorNoteListCellBackground;
     }
     return _tableView;
 }
