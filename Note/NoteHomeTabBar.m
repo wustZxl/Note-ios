@@ -25,11 +25,11 @@
 - (UIButton *)centerButton{
     if (!_centerButton) {
         _centerButton = [[UIButton alloc]init];
-        _centerButton.frame = CGRectMake((SCREEN_WIDTH - CENTER_BUTTON_WIDTH)/2, self.bounds.origin.y - CENTER_BUTTON_HEIGHT/2, CENTER_BUTTON_WIDTH, CENTER_BUTTON_HEIGHT);
+        _centerButton.frame = CGRectMake((SCREEN_WIDTH - CENTER_BUTTON_WIDTH)/2.0, self.bounds.origin.y - CENTER_BUTTON_HEIGHT/2.0, CENTER_BUTTON_WIDTH, CENTER_BUTTON_HEIGHT);
         [_centerButton setImage:[UIImage imageNamed:@"tabbar_home"] forState:UIControlStateNormal];
         [_centerButton addTarget:self action:@selector(centerButtonEvent:) forControlEvents:UIControlEventTouchUpInside];
         [self bringSubviewToFront:_centerButton];
-         
+        _centerButton.accessibilityLabel = @"Home"; // Accessibility inspector
     }
     return _centerButton;
 }

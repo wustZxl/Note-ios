@@ -20,6 +20,9 @@
 		228EDEAF235EEF28000CC2F1 /* DoneListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 228EDEAE235EEF28000CC2F1 /* DoneListViewController.m */; };
 		228EDEB523601DFC000CC2F1 /* NoteHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 228EDEB423601DFC000CC2F1 /* NoteHomeViewController.m */; };
 		228EDEB8236040F5000CC2F1 /* NoteListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 228EDEB7236040F4000CC2F1 /* NoteListViewController.m */; };
+		228EDF0E23619289000CC2F1 /* NoteListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 228EDF0D23619289000CC2F1 /* NoteListCell.m */; };
+		228EDF1123619BCA000CC2F1 /* NoteInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 228EDF1023619BCA000CC2F1 /* NoteInfoModel.m */; };
+		228EDF1423619FA3000CC2F1 /* NoteInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 228EDF1323619FA3000CC2F1 /* NoteInfo.json */; };
 		22CAEC58235D518900B4E1C9 /* NoteHomeTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CAEC57235D518900B4E1C9 /* NoteHomeTabBar.m */; };
 		5BF3B1D597A256403D052957 /* libPods-Note.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F249900D38E721B8A7B76FDF /* libPods-Note.a */; };
 /* End PBXBuildFile section */
@@ -69,6 +72,11 @@
 		228EDEB6236040F4000CC2F1 /* NoteListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoteListViewController.h; sourceTree = "<group>"; };
 		228EDEB7236040F4000CC2F1 /* NoteListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteListViewController.m; sourceTree = "<group>"; };
 		228EDEDF23607CD4000CC2F1 /* UICommonColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UICommonColor.h; sourceTree = "<group>"; };
+		228EDF0C23619289000CC2F1 /* NoteListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoteListCell.h; sourceTree = "<group>"; };
+		228EDF0D23619289000CC2F1 /* NoteListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteListCell.m; sourceTree = "<group>"; };
+		228EDF0F23619BCA000CC2F1 /* NoteInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoteInfoModel.h; sourceTree = "<group>"; };
+		228EDF1023619BCA000CC2F1 /* NoteInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteInfoModel.m; sourceTree = "<group>"; };
+		228EDF1323619FA3000CC2F1 /* NoteInfo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = NoteInfo.json; sourceTree = "<group>"; };
 		22CAEC56235D518900B4E1C9 /* NoteHomeTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoteHomeTabBar.h; sourceTree = "<group>"; };
 		22CAEC57235D518900B4E1C9 /* NoteHomeTabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteHomeTabBar.m; sourceTree = "<group>"; };
 		22CAEC59235D51CE00B4E1C9 /* UICommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UICommon.h; sourceTree = "<group>"; };
@@ -136,6 +144,9 @@
 		228387BA235D508200F2A4ED /* Note */ = {
 			isa = PBXGroup;
 			children = (
+				228EDF1223619F77000CC2F1 /* Resource */,
+				228EDF0B23619264000CC2F1 /* Cell */,
+				228EDF0A236191E4000CC2F1 /* Model */,
 				228EDEE023607E23000CC2F1 /* CommonFile */,
 				228387BB235D508200F2A4ED /* AppDelegate.h */,
 				228387BC235D508200F2A4ED /* AppDelegate.m */,
@@ -187,6 +198,32 @@
 				228EDEDF23607CD4000CC2F1 /* UICommonColor.h */,
 			);
 			path = CommonFile;
+			sourceTree = "<group>";
+		};
+		228EDF0A236191E4000CC2F1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				228EDF0F23619BCA000CC2F1 /* NoteInfoModel.h */,
+				228EDF1023619BCA000CC2F1 /* NoteInfoModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		228EDF0B23619264000CC2F1 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				228EDF0C23619289000CC2F1 /* NoteListCell.h */,
+				228EDF0D23619289000CC2F1 /* NoteListCell.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		228EDF1223619F77000CC2F1 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				228EDF1323619FA3000CC2F1 /* NoteInfo.json */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		409149ED1E035F6879F01EE0 /* Pods */ = {
@@ -302,6 +339,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				228EDF1423619FA3000CC2F1 /* NoteInfo.json in Resources */,
 				228387CB235D508300F2A4ED /* LaunchScreen.storyboard in Resources */,
 				228387C8235D508300F2A4ED /* Assets.xcassets in Resources */,
 				228387C6235D508200F2A4ED /* Main.storyboard in Resources */,
@@ -357,7 +395,9 @@
 				228387C3235D508200F2A4ED /* ViewController.m in Sources */,
 				228EDEB523601DFC000CC2F1 /* NoteHomeViewController.m in Sources */,
 				228EDEAC235EEEC3000CC2F1 /* MeViewController.m in Sources */,
+				228EDF1123619BCA000CC2F1 /* NoteInfoModel.m in Sources */,
 				228EDEB8236040F5000CC2F1 /* NoteListViewController.m in Sources */,
+				228EDF0E23619289000CC2F1 /* NoteListCell.m in Sources */,
 				228EDEA9235EECDF000CC2F1 /* TodoListViewController.m in Sources */,
 				228EDEAF235EEF28000CC2F1 /* DoneListViewController.m in Sources */,
 				228387BD235D508200F2A4ED /* AppDelegate.m in Sources */,

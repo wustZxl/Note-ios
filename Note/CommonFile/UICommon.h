@@ -20,5 +20,8 @@
 #define HOME_TABBAR_NUM                     4
 #define HOME_TABBAR_WIDTH                   SCREEN_WIDTH/HOME_TABBAR_NUM
 
+#pragma mark - ================= tableView ==================
+#define NoteListCellIdentifier              @"NoteListViewCell"
+
 #endif /* UICommon_h */
 
