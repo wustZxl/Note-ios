@@ -12,11 +12,12 @@
 #import "UICommon.h"
 #import "UICommonColor.h"
 #import "UIColor+Addition.h"
+#import "UIImage+Addition.h"
 
 @interface NoteListViewController ()
 
 @property (nonatomic,strong) UITableView *tableView;
-@property (nonatomic,copy) NSArray *datasource;
+@property (nonatomic,copy) NSMutableArray *datasource;
 
 @end
 
@@ -33,7 +34,7 @@
     self.tableView.delegate = self;
 }
 
-- (NSArray *)datasource {
+- (NSMutableArray *)datasource {
     if (!_datasource) {
         // json文件路径
         NSString *path = [[NSBundle mainBundle] pathForResource:@"NoteInfo.json" ofType:nil];
@@ -78,6 +79,54 @@
     view.backgroundColor = ColorNoteListCellBackground;
     cell.editingAccessoryView = label;
     return cell;
+}
+
+//- (void)setEditing:(BOOL)editing animated:(BOOL)animated {
+//
+//}
+
+// cell头部滑动事件
+//- (UISwipeActionsConfiguration *)tableView:(UITableView *)tableView leadingSwipeActionsConfigurationForRowAtIndexPath:(NSIndexPath *)indexPath {
+//
+//}
+
+// cell尾部滑动事件
+- (UISwipeActionsConfiguration *)tableView:(UITableView *)tableView trailingSwipeActionsConfigurationForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UIContextualAction *deleteAction = [UIContextualAction contextualActionWithStyle:UIContextualActionStyleDestructive title:@"删除" handler:^(UIContextualAction * _Nonnull action, __kindof UIView * _Nonnull sourceView, void (^ _Nonnull completionHandler)(BOOL)) {
+        [self.tableView setEditing:NO animated:YES];
+        [self.datasource removeObjectAtIndex:indexPath.row];
+//        [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:indexPath.section]
+//                      withRowAnimation:UITableViewRowAnimationFade];
+        [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        completionHandler(YES);
+    }];
+    //也可以设置图片
+    deleteAction.backgroundColor = ColorNoteListCellBackground;
+    UIImage *deleteImage = [UIImage reSizeImage:[UIImage imageNamed:@"icon_delete"] toSize:CGSizeMake(40, 40)];
+    deleteImage = [UIImage maskImage:deleteImage withColor:[UIColor redColor]];
+    deleteAction.image = deleteImage;
+    
+    UIContextualAction *collectionAction = [UIContextualAction contextualActionWithStyle:UIContextualActionStyleDestructive title:@"删除" handler:^(UIContextualAction * _Nonnull action, __kindof UIView * _Nonnull sourceView, void (^ _Nonnull completionHandler)(BOOL)) {
+        [self.tableView setEditing:NO animated:YES];
+        /***
+         here need more code
+         add more code to collect the note
+         ***/
+        completionHandler(YES);
+    }];
+    
+    //也可以设置图片
+    collectionAction.backgroundColor = ColorNoteListCellBackground;
+    UIImage *collectionImage = [UIImage reSizeImage:[UIImage imageNamed:@"icon_collection"] toSize:CGSizeMake(40, 40)];
+    collectionImage = [UIImage maskImage:collectionImage withColor:[UIColor redColor]];
+    collectionAction.image = collectionImage;
+
+    UISwipeActionsConfiguration *config = [UISwipeActionsConfiguration configurationWithActions:@[deleteAction,collectionAction]];
+
+    config.performsFirstActionWithFullSwipe = NO;
+    
+    return config;
 }
 
 //- (UISwipeActionsConfiguration *)tableView:(UITableView *)tableView leadingSwipeActionsConfigurationForRowAtIndexPath:(NSIndexPath *)indexPath {

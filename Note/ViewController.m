@@ -22,6 +22,7 @@
 #import <Masonry/Masonry.h>
 #import "UICommon.h"
 #import "UICommonColor.h"
+#import "UIImage+Addition.h"
 
 @interface ViewController ()
 
@@ -85,19 +86,10 @@
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:childController];
     childController.navigationItem.title = title;
     nav.tabBarItem.title = title;
-    UIImage *image = [self reSizeImage:[UIImage imageNamed:imageName] toSize:CGSizeMake(TABBAR_IMAGE_WIDTH, TABBAR_IMAGE_HEIGHT)];
+    UIImage *image = [UIImage reSizeImage:[UIImage imageNamed:imageName] toSize:CGSizeMake(TABBAR_IMAGE_WIDTH, TABBAR_IMAGE_HEIGHT)];
     nav.tabBarItem.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     
     [self addChildViewController:nav];
-}
-
-- (UIImage *)reSizeImage:(UIImage *)image toSize:(CGSize)reSize
-{
-    UIGraphicsBeginImageContext(CGSizeMake(reSize.width, reSize.height));
-    [image drawInRect:CGRectMake(0, 0, reSize.width, reSize.height)];
-    UIImage *reSizeImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    return reSizeImage;
 }
 
 #pragma mark - ================= selector ==================
